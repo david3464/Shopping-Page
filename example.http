@@ -1,0 +1,8 @@
+GET https://localhost:4000
+
+POST https://localhost:4000
+content-type: application/json
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
