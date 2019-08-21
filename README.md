@@ -1,2 +1,2 @@
 # Shopping-Page
-MERN Stack Project-1
+MERN Stack Project-Mern
