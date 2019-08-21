@@ -22,10 +22,10 @@ class AppNavbar extends Component {
    render(){
        return(
            <div>
-           <NavBar color="dark" dark expand="sm" className="mb-5">
+           <Navbar color="dark" dark expand="sm" className="mb-5">
                <Container>
                     <NavbarBrand href="/">ShoppingList</NavbarBrand>
-                    <NavbarToggler onClink={this.toggle}/>
+                    <NavbarToggler onClick={this.toggle}/>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
@@ -34,7 +34,7 @@ class AppNavbar extends Component {
                         </Nav>
                     </Collapse>
                </Container>
-           </NavBar>
+           </Navbar>
        </div> 
        );
    }
