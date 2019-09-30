@@ -24,28 +24,34 @@ class ShoppingList extends Component {
                         const name = prompt ('Enter Item');
                         if (name) {
                             this.setState(state =>({
-                                item: [...state.item, {id: uuid(), name}]
+                                items: [...state.items, {id: uuid(), name}]
                             }));
                         }
-                    }}>
-                    Add Item</Button>
-                    
-                    <ListGroup>
-                        <TransitionGroup className = "shopping-list">
-                            {item.map(({id,name }) =>  (
-                                <CSSTransition key={id} timeout = {500} className="fade">
-                                    <listGroupItem>
-                                    <Button 
-                                        className = "remove-btn"
-                                        color = "danger"
-                                        size="sm"
-                                        onClick = {()=>}
-                                    {name}
-                                    </listGroupItem>
-                                </CSSTransition>
+                    }}
+                >
+                Add Item</Button>
+                
+                <ListGroup>
+                    <TransitionGroup className="shopping-list">
+                        {items.map(({ id, name }) =>(
+                            <CSSTransition key={id} timeout={500} classNames="fade">
+                                <ListGroupItem>
+                                <Button
+                                    className="remove-btn"
+                                    color = "danger"
+                                    size="sm"
+                                    onClick = {() => {
+                                        this.setState(state => ({
+                                        items: state.items.filter(item => item.id !== id)
+                                        }));
+                                    }}
+                                >&times;</Button>
+                                {name}</ListGroupItem>
+                            </CSSTransition>
                         ))}
-                        </TransitionGroup>
-                    </ListGroup>
+                    </TransitionGroup>
+                </ListGroup>
+            </Container>
         );
     }
 }
